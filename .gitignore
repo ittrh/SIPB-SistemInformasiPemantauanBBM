@@ -1,4 +1,0 @@
-.gitignore
-alembic.ini
-migrations/
-venv/
