@@ -1,6 +1,6 @@
 …or create a new repository on the command line
 echo "# SIPB-SistemInformasiPemantauanBBM" >> README.md
-git init (lakukan hanya pertama kali upload ke github/pertama kali membuat repo project)
+git init (lakukan hanya pertama kali upload ke github/pertama kali membuat repo projectco)
 git add README.md
 git commit -m "first commit"
 git branch -M main
