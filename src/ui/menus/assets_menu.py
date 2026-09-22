@@ -213,7 +213,7 @@ class Ui_AssetsMenu(object):
     # setupUi
 
     def retranslateUi(self, AssetsMenu):
-        AssetsMenu.setWindowTitle(QCoreApplication.translate("AssetsMenu", u"Form", None))
+        AssetsMenu.setWindowTitle(QCoreApplication.translate("AssetsMenu", u"SIPB - Assets", None))
         self.label_6.setText(QCoreApplication.translate("AssetsMenu", u"Form Assets dan Data Assets :", None))
         self.label_3.setText(QCoreApplication.translate("AssetsMenu", u"Tipe BBM :", None))
         self.editCariTipeBBM.setPlaceholderText(QCoreApplication.translate("AssetsMenu", u"Cari ...", None))

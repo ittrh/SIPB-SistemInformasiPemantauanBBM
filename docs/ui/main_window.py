@@ -119,7 +119,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"SIPB - PT. Tanjung Redeb Hutani", None))
         self.actionAsset.setText(QCoreApplication.translate("MainWindow", u"Assets", None))
         self.actionTangki.setText(QCoreApplication.translate("MainWindow", u"Tangki", None))
         self.actionEdit_Password.setText(QCoreApplication.translate("MainWindow", u"Password", None))

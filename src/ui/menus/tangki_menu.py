@@ -188,7 +188,7 @@ class Ui_TangkiMenu(object):
     # setupUi
 
     def retranslateUi(self, TangkiMenu):
-        TangkiMenu.setWindowTitle(QCoreApplication.translate("TangkiMenu", u"Form", None))
+        TangkiMenu.setWindowTitle(QCoreApplication.translate("TangkiMenu", u"SIPB - Master Tangki", None))
         self.label_6.setText(QCoreApplication.translate("TangkiMenu", u"Form Master Tangki dan Data Tangki :", None))
         self.label_3.setText(QCoreApplication.translate("TangkiMenu", u"Lokasi Tangki :", None))
         self.editCariLokasiTangki.setPlaceholderText(QCoreApplication.translate("TangkiMenu", u"Cari ...", None))

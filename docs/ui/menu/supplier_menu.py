@@ -28,6 +28,10 @@ class Ui_SupplierMenu(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.verticalLayout_4 = QVBoxLayout()
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_4.addItem(self.verticalSpacer_2)
+
         self.label_6 = QLabel(SupplierMenu)
         self.label_6.setObjectName(u"label_6")
         font = QFont()
@@ -130,8 +134,8 @@ class Ui_SupplierMenu(object):
     # setupUi
 
     def retranslateUi(self, SupplierMenu):
-        SupplierMenu.setWindowTitle(QCoreApplication.translate("SupplierMenu", u"Form", None))
-        self.label_6.setText(QCoreApplication.translate("SupplierMenu", u"Form Master Supplier danData Supplier :", None))
+        SupplierMenu.setWindowTitle(QCoreApplication.translate("SupplierMenu", u"SIPB - Supplier Master", None))
+        self.label_6.setText(QCoreApplication.translate("SupplierMenu", u"Form Master Supplier dan Data Supplier :", None))
         self.label_8.setText(QCoreApplication.translate("SupplierMenu", u"Nama Supplier :", None))
         self.label_4.setText(QCoreApplication.translate("SupplierMenu", u"Alamat :", None))
         self.btnSimpan.setText(QCoreApplication.translate("SupplierMenu", u"Simpan", None))
