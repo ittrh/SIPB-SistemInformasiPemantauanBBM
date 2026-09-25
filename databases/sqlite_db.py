@@ -47,7 +47,8 @@ def init_db_schema():
     global _db_init
     if not _db_init:
         # Import model di dalam fungsi untuk menghindari circular import
-        # from databases.models.log_model import LogHeader, LogDetail
+        # data initialisasi ini ada dalam file __init__.py
+        import databases.models
         Base.metadata.create_all(bind=engine)
         _db_init = True
         
