@@ -14,21 +14,31 @@ class AssetsMenuCrud:
                 .join(FuelTypes, Assets.fuel_type_id == FuelTypes.id)
                 .all()
             )
-        self.assets_data_view = []
-        for assets, locations, asset_type, fuel_type in query:
-            item = {
-                "id": getattr(assets, 'id', None),
-                "location_asset": locations.name,
-                "code_asset": assets.code_asset,
-                "no_plat": assets.no_plat,
-                "type_asset": asset_type.type,
-                "fuel_type": fuel_type.type,
-            }
-            self.assets_data_view.append(item)
+            self.assets_data_view = []
+            for assets, locations, asset_type, fuel_type in query:
+                item = {
+                    "id": getattr(assets, 'id', None),
+                    "location_asset": locations.name,
+                    "code_asset": assets.code_asset,
+                    "no_plat": assets.no_plat,
+                    "type_asset": asset_type.type,
+                    "fuel_type": fuel_type.type,
+                }
+                self.assets_data_view.append(item)
         return self.assets_data_view
     
     def create_asset(self, param_dict: dict) -> None:
+        code_asset = param_dict['code_asset']
+        no_plat = param_dict['no_plat']
+        
         with get_db_session() as session:
+            existing_code = session.query(Assets).filter(Assets.code_asset == code_asset).first()
+            if existing_code:
+                raise ValueError(f"Kode Asset: {code_asset} sudah terdaftar!")
+            existing_plat = session.query(Assets).filter(Assets.no_plat == no_plat).first()
+            if existing_plat:
+                raise ValueError(f"No Plat: {no_plat} sudah terdaftar")
+            
             asset = Assets(
                 home_location_id=param_dict['home_location_id'],
                 code_asset=param_dict['code_asset'],
