@@ -21,6 +21,7 @@ class AssetsMenuController(QWidget):
         
         self.load_table_data()
         self.ui.editCariDataAsset.textChanged.connect(self.search_handler)
+        self.ui.tableDataAsset.doubleClicked.connect(self.data_selected_handler)
         
         self.ui.btnSimpan.clicked.connect(self.simpan_handler)
         
@@ -97,9 +98,9 @@ class AssetsMenuController(QWidget):
         self.ui.comboLokasiKendaraan.setCurrentIndex(0)
         self.ui.editKodeAsset.clear()
         self.ui.editPlatNomor.clear()
+        self.ui.editCariDataAsset.clear()
         
     def load_table_data(self, data_assets=None):
-        self.ui.editCariDataAsset.clear()
         if data_assets is None:
             data_assets = self.crud.assets_data_view
         self.model = AssetsMenuTableModel(data_assets, parent=self)
@@ -107,7 +108,6 @@ class AssetsMenuController(QWidget):
         header = self.ui.tableDataAsset.horizontalHeader()
         self.ui.tableDataAsset.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.ui.tableDataAsset.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
-        
         
         # Sesuaikan dengan jumlah kolom pada model tabel
         for col_index in range(5):
@@ -120,3 +120,10 @@ class AssetsMenuController(QWidget):
             self.load_table_data(table_data)
         else:
             self.load_table_data()
+            
+    def data_selected_handler(self, index):
+        row = index.row()
+        if row < 0:
+            return
+        data = self.model._data[row]
+        print(data.get('id'))
